@@ -93,7 +93,9 @@ async function getPrice(){
         sellAmount: amount,
     }
 
-    const headers = {'cef475fc-d88c-4906-931c-5da2748d752a'}; // This is a placeholder. Get your live API key from the 0x Dashboard (https://dashboard.0x.org/apps)
+    const headers = {
+        '0x-api-key': 'cef475fc-d88c-4906-931c-5da2748d752a' // This is a placeholder key.
+    }; // This is a placeholder. Get your live API key from the 0x Dashboard (https://dashboard.0x.org/apps)
   
     // Fetch the swap price.
     const response = await fetch(`https://api.0x.org/swap/v1/price?${qs.stringify(params)}`, { headers });
@@ -118,8 +120,9 @@ async function getQuote(account){
         takerAddress: account,
     }
     
-    const headers = {'0x-api-key:cef475fc-d88c-4906-931c-5da2748d752a'}; // This is a placeholder. Get your live API key from the 0x Dashboard (https://dashboard.0x.org/apps)
-  
+        const headers = {
+        '0x-api-key': 'cef475fc-d88c-4906-931c-5da2748d752a' // This is a placeholder key.
+    };
     // Fetch the swap quote.
     const response = await fetch(`https://api.0x.org/swap/v1/quote?${qs.stringify(params)}`, { headers });
     
